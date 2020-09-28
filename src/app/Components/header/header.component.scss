@@ -1,0 +1,17 @@
+nav{
+    background-color: #23293f;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    p{
+        display: inline-block;
+        font-size: 22px;
+        line-height: inherit;
+        white-space: nowrap;
+        color: white;
+    }
+}

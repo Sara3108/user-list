@@ -1,0 +1,178 @@
+.container{
+    
+    .card-container{
+        width: 80%;
+        margin: 20px auto;
+        .add-user{
+            h3{
+                margin: 0;
+                text-align: right;
+                padding: 5px;
+                font-size: 20px;
+                color: #0288D1;
+                cursor: pointer;
+                text-align: right;
+
+                img{
+                    width: 25px;
+                }
+                span{
+                    padding: 12px;
+                    display: inline-block;
+                    font-size: 23px;
+                    font-weight: 500;
+                }
+            }
+           
+        }
+       .card{
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 7px 6px 21px -2px rgba(145,145,153,0.7);
+
+        img.avatar-img{
+            border-radius: 50%;
+            width: 90px;
+            flex: 1;
+        }
+
+        h3.user-name{
+            color: #474646;
+            padding: 5px 15px;
+            flex: 7;
+            font-weight: 500;
+        }
+
+        .actions {
+            flex: 1;
+            text-align: center;
+            .edit{
+                width: 30px;
+                border: none;
+                padding: 5px;
+                margin: 5px;
+                border-radius: 2px;
+                background-color: transparent;
+                cursor: pointer;
+                img{
+                    width: 25px;
+                }
+
+            }
+            
+        }
+       }
+
+       .pagination{
+        text-align: center;
+        padding: 10px;
+           button, span{
+               padding: 5px 15px;
+           }
+           span{
+               background-color: #fff;
+               border: 1px solid #fff;
+               border-radius: 5px;
+           }
+       }
+    }
+}
+
+
+
+// modal
+.modal {
+    // display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 450px;
+    .modal-header{
+        background-color: #0288D1;
+        padding: 0px 20px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .modal-body{
+        padding: 20px;
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 10px;
+    cursor: pointer;
+  }
+  
+  .row{
+      display: flex;
+      align-items: center;
+      padding: 10px 5px;
+  }
+
+  .col-sm{
+        flex: 2;
+        text-align: center;
+  }
+
+  .col-lg{
+      flex: 7
+  }
+
+  .text-danger{
+      color: #e95530;
+      padding: 3px;
+  }
+
+  input{
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  input:disabled{
+      background-color: #f6f6f6;
+  }
+
+  .submit-btn{
+      text-align: right;
+      button{
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #048f55;
+        border-radius: 5px;
+      }
+      
+  }

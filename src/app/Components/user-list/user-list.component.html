@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="card-container" *ngIf="users">
+    <div class="add-user">
+      <h3 (click)="openAddModal()">
+        <img src="../../../assets/icon/plus.svg" alt="Add" />
+        <span>Add User</span>
+      </h3>
+    </div>
+    <div class="card" *ngFor="let user of users">
+      <img class="avatar-img" [src]="user.avatar" alt="user {{ user.id }}" />
+      <h3 class="user-name">{{ user.first_name }} {{ user.last_name }}</h3>
+      <div class="actions">
+        <a class="edit" (click)="openEditModal(user)">
+          <img src="../../../assets/icon/edit.svg" alt="Edit" />
+        </a>
+      </div>
+    </div>
+
+    <div class="pagination">
+        <button (click)="getUsersfromPagination(page-1)"><</button>
+        <span>{{page}}</span>
+        <button (click)="getUsersfromPagination(page+1)">></button>
+    </div>
+  </div>
+</div>
+
+<!-- edit & update modal -->
+
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 *ngIf="newUser">Add User</h4>
+      <h4 *ngIf="!newUser">Update User</h4>
+      <span class="close" (click)="showModal = false">&times;</span>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="userForm" (ngSubmit)="formSubmit()">
+        <div class="row" *ngIf="!newUser">
+          <div class="col-sm">
+            <label for="id">ID</label>
+          </div>
+          <div class="col-lg">
+            <input disabled id="id" formControlName="id" name="id" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="name">Name</label>
+          </div>
+          <div class="col-lg">
+            <input id="name" name="name" formControlName="name" />
+            <div class="text-danger" *ngIf="userForm.get('name').getError('required') && userForm.get('name').touched">
+                Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+              <label for="job">Job</label>
+            </div>
+            <div class="col-lg">
+              <input id="job" name="job" formControlName="job" />
+              <div class="text-danger" *ngIf="userForm.get('job').getError('required') && userForm.get('name').touched">
+                  Job is required
+             </div>
+            </div>
+          </div>
+
+          <div class="submit-btn">
+              <button type="submit"> 
+                  <span *ngIf="newUser">Add</span>
+                  <span *ngIf="!newUser">Update</span>
+             </button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
